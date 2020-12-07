@@ -1,0 +1,142 @@
+body{
+	margin: 0;
+}
+#wrapper{
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: space-around;
+
+}
+
+#wrap_good{
+	display: grid;
+	grid-template-columns: 2.5fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas: 
+		'photo title title title'
+		'photo size size size'
+		'photo сolor сolor сolor'
+		'photo count count count'
+		'photo price . cart'
+		'photo price . cart';
+
+	width: 750px;
+	height: 500px;
+
+	margin-top: 7%; 
+	padding: 10px;
+
+	background-color: #5e191d;
+	border-radius: 10px;
+	border-color: black;
+
+}
+
+
+#sell{	
+	grid-area: photo;
+	display: flex;
+	align-items: center;
+
+	width: 90%;
+	height: 90%;
+
+	margin: auto;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.info{
+	padding-left: 10px;
+	padding-top: 20px;
+
+	background-color: black;
+	border: 1px solid white;
+	border-radius: 10px;
+
+	margin-top: 25px;
+
+	width: 95%;
+	height: 60%;
+
+	color: white;
+	font-size: 18pt;
+	font-family: Calibri;
+}
+
+#infoTitle{
+	grid-area: title;
+}
+
+#infoSize{
+	grid-area: size;
+}
+
+#infoColor{
+	grid-area: сolor;
+	}
+
+#infoCount{
+	grid-area: count;
+}
+
+#priceGood{
+	grid-area: price;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	
+	font-family: Calibri;
+	font-size: 26pt;
+	color: white;
+
+	background-color: black;
+	border: 1px solid white;
+	border-radius: 10px;
+
+	margin-top: 70px;
+
+	width: 90%;
+	height: 40%;
+}
+
+#cartGood {
+	grid-area: cart;
+
+	background-color: black;
+	border: 1px solid white;
+	border-radius: 10px;
+
+	margin-top: 70px;
+	margin-left: 18px;
+
+	width: 70%;
+	height: 40%;
+
+	cursor: url(/src/cur/link_menu.cur), pointer;
+}
+
+#picture{
+
+	width: 100%;
+	object-fit: contain;
+}
+ #closeImg{
+	width: 25px;	
+ 	margin-left: -35%;
+ 	object-fit: contain; 
+ 	cursor: url(/src/cur/link_menu.cur), pointer;
+ }
+
+#close{
+	display: flex;
+	position: absolute;
+	outline: none;
+	border-radius: 10px;
+	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+	margin-left: 730px;
+}

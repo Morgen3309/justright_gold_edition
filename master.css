@@ -1,0 +1,180 @@
+﻿@font-face{
+	font-family: Pompadur;
+	src: url(src/fonts/17311.ttf);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body{
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	background: url(src/ico/bg.jpg);
+	overflow-x: hidden;  
+	cursor: url(src/cur/select.cur), default;
+
+}
+
+@keyframes waves-lines {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1, 0.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+
+}
+
+
+.preloader {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background-color: #651a14;
+	display: flex;
+	align-items: center;
+}
+.preloader__loader {
+	width: 500px;
+	height: auto;
+
+	display: flex;
+	justify-content: center;
+
+	margin: 0 auto;
+}
+
+.preloader__line{
+	width: 10px;
+	height: 100px;
+
+	margin: 0 5px; 
+
+	border-radius: 5px;
+	background-color: white;
+}
+
+.preloader__line:nth-child(1), 
+.preloader__line:nth-child(5),
+.preloader__line:nth-child(9),
+.preloader__line:nth-child(13) {
+	animation-name: waves-lines;
+	animation-duration: 1s;
+	animation-delay: 0.3s;
+	animation-iteration-count: infinite;
+
+}
+
+.preloader__line:nth-child(3),
+.preloader__line:nth-child(7),
+.preloader__line:nth-child(11) {
+	animation-name: waves-lines;
+	animation-duration: 1s;
+	animation-delay: -0.8s;
+	animation-iteration-count: infinite;
+}
+
+.preloader__line:nth-child(2n) {
+	animation-name: waves-lines;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+
+}
+
+#wrapper {
+	width: 100%; /* Ширина */
+	padding: 0; /* Внутренний отступ */
+	margin: 0; /* Выравнивание по центру экрана монитора */
+}
+
+
+#content{
+	width: 50%;
+	background-color: #5e191d;
+	height: 1250px;
+	margin-left: 30vw;
+}
+
+
+#iframe{
+	font-family: Calibri;
+	min-width: 430px;
+	width: inherit; /*Взять у родителя*/
+	height: inherit;
+
+	background-color: #5e191d;
+
+	position: absolute;
+
+	border: none;
+
+	display: block;
+}
+
+#preview{
+	border: none; 
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+form{
+	width: auto;
+
+	float: right;
+
+	margin-right: 7%;
+
+}
+
+input{
+	width: 230px; /*ширина окна поиска*/
+	height: 30px;
+
+	padding-left: 15px; /*Двигаем слово Поиск*/
+
+	border: 2px solid black;
+	border-radius: 10px;
+
+	outline: none; /*Нет синей рамки при нажатии*/
+	position: relative;
+
+	transition: .3s linear;
+	}
+
+/*input:focus{
+	width: 260px; /*выдвижение*/
+
+button{
+	width: 30px;
+	height: 32px;
+	background: none;
+
+	border: none;
+	border-left: 1px solid black;
+
+	outline: none;
+	position: absolute;
+
+	right: 7%;
+}
+
+button:before{
+	content: "\f002";
+	font-family: FontAwesome;
+	color: red;
+}
+
+
+
+
+

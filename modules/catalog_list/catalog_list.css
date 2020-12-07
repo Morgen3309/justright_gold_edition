@@ -1,0 +1,59 @@
+#catalog_list{
+  font-family: Calibri;
+  font-size: 1vw;
+  color: white;
+
+  width: 36vh;
+
+  border-radius: 10px; /*скругление*/
+  background-color: black;
+
+  padding: 0.5% 0 1.5%;
+  margin-left: 7vw;
+  margin-top: 1vh;
+
+  position: fixed;
+/*  visibility: hidden;*/
+}
+
+@media not(scroll-align: start){
+  #catalog_list{
+    top: 0;
+  }
+}
+
+#catalog_list ul{
+  list-style: none; /*убираем отступы*/
+}
+
+#catalog_list li{
+  margin-top: 1vh;
+}
+
+#catalog_list a{
+  text-decoration: none;
+  color: white;
+}
+
+#catalog_list a:hover{
+  text-decoration: none;
+  color: #ba3238;
+
+  cursor: url(/src/cur/link_menu.cur), pointer;
+}
+
+
+#clothes:hover{
+  display: block;
+  
+}
+
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/*.sticky, #content{
+  padding-top: 60px;
+}*/

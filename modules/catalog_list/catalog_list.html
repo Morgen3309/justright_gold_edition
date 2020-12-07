@@ -1,0 +1,33 @@
+<head>
+ <link rel="stylesheet" type="text/css" href="modules/catalog_list/catalog_list.css">
+</head>
+<div id="catalog_list">
+  <ul>
+    <li id="clothes"><a  type='button' onclick="iframe_obj.src='modules/catalog_list/page.php?id=1'" target="iframe_clothes" id="clothes"><img src="src/ico/Одежда.png"  height="20" width="20" hspace="7" wspace="0" color="white">Одежда</a></li>
+
+    <li><a  type='button' onclick="iframe_obj.src='modules/catalog_list/page.php?id=2'" target="iframe_shoes" id="shoes"><img src="src/ico/Обувь.png"  height="20" width="20" hspace="7" wspace="0">Обувь</a></li>
+
+    <li><a  type='button' onclick="iframe_obj.src='modules/catalog_list/accessory.html'" target="iframe_accessory" id="accessory"><img src="src/ico/Аксессуары.png"  height="20" width="20" hspace="7" wspace="0">Аксессуары</a></li>
+
+    <li><a  type='button' onclick="iframe_obj.src='modules/catalog_list/hat.html'" target="iframe_hat" id="hat"><img src="src/ico/Головные уборы.png"  height="20" width="20" hspace="7" wspace="0">Головные уборы</a></li>
+
+    <li><a  type='button' onclick="iframe_obj.src='modules/catalog_list/instrument.html'" target="iframe_instrument" id="instrument"><img src="src/ico/МузИнструменты.png"  height="20" width="20" hspace="7" wspace="0">Музыкальные инструменты</a></li>
+  </ul>        
+</div>
+<script type="text/javascript">
+  window.onscroll = function(){myFunction()}
+  
+  var menu = document.getElementById('catalog_list');
+  var sticky = menu.offsetTop - 70;
+
+  function myFunction(){
+    if (window.pageYOffset >= sticky){
+      menu.classList.add('sticky');
+
+    }
+    else{
+      menu.classList.remove('sticky');
+    }
+
+  }
+</script>

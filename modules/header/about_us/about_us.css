@@ -1,0 +1,63 @@
+@font-face{
+	font-family: Pompadur;
+	src: url(/src/fonts/17311.ttf);
+}
+
+body{
+	font-family: Calibri;
+	overflow-y: hidden;
+	text-align: justify;
+}
+
+.wrapper{
+	height: 100%;
+	сolor: #fff;
+}
+
+#about_us{
+	background-color: #5e191d;
+	cursor: inherit;
+
+	width: 80%;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-left: 10%;
+
+
+}
+
+h1{
+	font-size: 3em;
+	text-align: left;
+	color: #fff;
+
+	margin: 0 0 5% 11% ;
+}
+
+p{
+	text-indent: 10vw;
+	margin-top: -3%;
+}
+
+#bg{
+	background-color: black;
+	width: 500px;
+	height: 100px;
+
+	text-align: center;
+
+	margin: 30px 0 0 30px;
+
+	padding-top: 7%;
+}
+
+#just{
+	color: white;
+
+	text-indent: 0;
+	font-family: "Pompadur";
+	font-size: 4em;	
+}
+

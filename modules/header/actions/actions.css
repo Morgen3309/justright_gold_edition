@@ -1,0 +1,23 @@
+body{overflow-y: hidden;}
+
+#wrapper{width: 100%;}
+
+#actions{
+	background-color: #5e191d;
+
+	width: 50%;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-left: 2%;
+}
+
+.stock{
+	background-color: green;
+
+	width: 190%;
+	height: 40vh;
+	margin-bottom: 8%; 
+}
