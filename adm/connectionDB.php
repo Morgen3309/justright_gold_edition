@@ -40,9 +40,30 @@
 			$stmt->execute(array_values($values));
 		}
 
-		// public function insert(string $table, $values); // добавить новую строку в базу
+		public function insert(string $table, $values)// добавить новую строку в базу
+		{
+			$column_list = implode('=?, ', array_keys($values));
+			$values_list = implode(", ", array_pad([], count(array_values($values)), '?'));
+			$query = "INSERT INTO `$table` ($column_list) VALUE ($values_list);";
+			$stmt = $this->connection->prepare($query);
+			$stmt->execute(array_values($values));
+		} 
 
-		// public function delete(string $table, $id); // удалить строку с id = $id
+		public function delete(string $table, $id) // удалить строку с id = $id
+		{
+			if (is_array($id)) {
+				$id_list = implode(', ', array_map('intval', $id));
+			}
+			else if ($id instanceof int){
+				$id_list = $id;
+			}
+			else {
+				die();
+			}
+			
+			$query = "DELETE FROM `$table` WHERE id IN ($id_list);";
+			$stmt = $this->connection->query($query);
+		}
 
 		// public function get(string $table, int $id, string $columnList = '*'): array; // получить строку с id = $id
 		

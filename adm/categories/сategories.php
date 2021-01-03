@@ -18,6 +18,7 @@
 	</style>
 </head>
 <body>
+	<form method="post">
 	<?php 
 		include_once '../connectionDB.php';
 
@@ -29,11 +30,13 @@
 		echo '<table>';
 
 		foreach ($categories as $i => $row) {
-			echo '<tr><td><a href="edit.php?id='.$row['id'].'">'.$row['category_name'].'</a></td></tr>';
+			echo '<tr><td><input name="id[]" type="checkbox" value="'.$row['id'].'"><a href="edit.php?id='.$row['id'].'">'.$row['category_name'].'</a></td></tr>';
 		}
 
 		echo '</table><br>';
 		?>
-	<a href="">Удалить</a>&nbsp;&nbsp;<a href="">Новая категория</a>
+	
+	<button type="submit" formaction="delete.php">Удалить</button>&nbsp;&nbsp;<a href="/adm/categories/new.php">Новая категория</a>
+	</form>
 </body>
 </html>
