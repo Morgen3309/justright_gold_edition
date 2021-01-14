@@ -9,7 +9,7 @@
 				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 				);
 		
-			$this->connection = new PDO('mysql:host=localhost; dbname=lena2;charset=utf8', 'root', 'root', $options);		
+			$this->connection = new PDO('mysql:host=localhost; dbname=justright;charset=utf8', 'root', 'root', $options);		
 		}
 
 		public function makeQuery(string $query)
@@ -35,7 +35,7 @@
 		public function update(string $table, int $id, $values) // изменить данные в строке
 		{
 			$column_list = implode('=?, ', array_keys($values));
-			$query = "UPDATE `$table` SET $column_list=? WHERE id=$id";
+			$query = "UPDATE `$table` SET $column_list=? WHERE id=$id;";
 			$stmt = $this->connection->prepare($query);
 			$stmt->execute(array_values($values));
 		}
@@ -65,11 +65,21 @@
 			$stmt = $this->connection->query($query);
 		}
 
-		// public function get(string $table, int $id, string $columnList = '*'): array; // получить строку с id = $id
+		public function get(string $table, int $id, string $column_list = '*'): array // получить строку с id = $id
+		{
+			$query = "SELECT $column_list FROM `$table` WHERE id=$id;";
+			$stmt = $this->connection->query($query);
+		}
 		
-		// public function getAll(string $table, string $columnList = '*'): array; // получить все записи
+		public function getAll(string $table, string $column_list = '*'): array // получить все записи
+		{
+			$query = "SELECT $column_list FROM `$table`;";
+			$stmt = $this->connection->query($query);
+			return $stmt->fetchAll();
+		}
 
-		public function __destruct(){
+		public function __destruct()
+		{
 			$this->connection = null;
 		}
 	}

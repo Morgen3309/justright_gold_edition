@@ -24,7 +24,7 @@
 
 		$db = new ConnectionDB;
 
-		$categories = $db->makeQuery("SELECT * FROM `category`;");
+		$categories = $db->getAll('category');
 
 		
 		echo '<table>';
@@ -34,9 +34,9 @@
 		}
 
 		echo '</table><br>';
-		?>
+	?>
 	
-	<button type="submit" formaction="delete.php">Удалить</button>&nbsp;&nbsp;<a href="/adm/categories/new.php">Новая категория</a>
+	<button type="submit" formaction="delete.php">Удалить</button>&nbsp;&nbsp;<a href="/adm/categories/new.php">Добавить категорию</a>
 	</form>
 </body>
 </html>

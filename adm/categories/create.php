@@ -6,5 +6,6 @@
 
 	$new_category = $db->insert('category', $values);
 
-	header('Location: /adm/categories/сategories.php');
+	$redirect = $_SERVER['HTTP_REFERER'];
+	header("Location: $redirect");
 ?>
