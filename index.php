@@ -9,7 +9,7 @@
 	<title>JUSTRIGHT - Магазин рок-атрибутики </title>
   </head>
   <body>
-  	<div class="preloader">
+<!--   	<div class="preloader">
 		<div class="preloader__loader">
 			<div class="preloader__line"></div>		
 			<div class="preloader__line"></div>		
@@ -26,7 +26,7 @@
 			<div class="preloader__line"></div>
 		</div>
 	</div>
-
+ -->
 	<div id="wrapper">
 
 	  <!-- Шапка с логотипом и меню -->
